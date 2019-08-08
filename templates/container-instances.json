@@ -63,6 +63,12 @@
       "metadata": {
         "description": "List of environment variables in an array format. Provide a name and value field for each variable and name and securevalue for hidden attributes i.e. secrets and password "
       }
+    },
+    "command": {
+      "type": "array",
+      "metadata": {
+        "description": "The commands to execute within the container instance in Docker exec form"
+      }
     }
   },
   "variables": {
@@ -86,7 +92,8 @@
                   "memoryInGB": "[float(parameters('memory'))]"
                 }
               },
-              "environmentVariables": "[parameters('environmentVariables')]"
+              "environmentVariables": "[parameters('environmentVariables')]",
+              "command": "[parameters('command')]"
             }
           }
         ],

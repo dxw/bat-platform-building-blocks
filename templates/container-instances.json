@@ -103,5 +103,11 @@
         }
       }
     }
-  ]
+  ],
+  "outputs": {
+    "containerIPv4Address": {
+      "value": "[reference(resourceId('Microsoft.ContainerInstance/containerGroups/', parameters('containerInstanceName'))).ipAddress.ip]",
+      "type": "string"
+    }
+  }
 }
